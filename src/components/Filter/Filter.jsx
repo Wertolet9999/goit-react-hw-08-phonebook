@@ -1,17 +1,38 @@
+import React from 'react';
 import css from './Filter.module.css';
-import { useFilter } from 'hooks/useFilter';
+import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { filterAction } from '../../Redux/filterSlice';
+import { getFilter } from 'Redux/selectors';
+import { TextField } from '@mui/material';
+import Box from '@mui/material/Box';
 
-export const Filter = () => {
-   const [filter, changeFilter] = useFilter();
+const Filter = () => {
+  const dispatch = useDispatch();
+  const filter = useSelector(getFilter);
+
+  const changeFilter = event => {
+    dispatch(filterAction(event.target.value));
+  };
+
   return (
-    <label htmlFor="">
-      Find contacts by name
-      <input
-        className={css.input}
+    <Box className={css.input}>
+      <TextField
+        id="outlined-textarea"
         type="text"
-        value={filter}
+        label="Find contacts by name"
+        name="filter"
         onChange={changeFilter}
+        value={filter}
+        multiline
       />
-    </label>
+    </Box>
   );
+};
+
+export default Filter;
+
+Filter.protoTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func,
 };

@@ -10,17 +10,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1,
-h2,
-p,
-ul,
-li,
-p {
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1{
+  margin: 0;
 }

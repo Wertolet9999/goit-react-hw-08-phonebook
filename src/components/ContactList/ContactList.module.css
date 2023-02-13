@@ -1,21 +1,25 @@
-.deleteButton {
-    display: inline-block;
-    margin-left: auto;
-}
-
-.deleteButton:hover{
-    background-color: #c22620;
-    color: white;
-    
-}
-
 .list {
-    width: 350px;
-    padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 
-.listItem {
-    display: flex;
-    margin-bottom: 10px;
-    font-size: 16px;
+.item {
+  width: 260px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgb(64, 47, 218);
+  border-radius: 4px;
+  list-style: none;
+  background-color: white;
+}
+
+.text {
+  padding-left: 15px;
+}
+
+.button:hover {
+  color: red;
 }
